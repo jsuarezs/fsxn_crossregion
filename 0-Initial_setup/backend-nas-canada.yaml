@@ -2,11 +2,11 @@
     "version": 1,
     "backendname": "canada-backend",
     "storageDriverName": "ontap-nas",
-    "managementLIF": "172.16.135.35",
-    "dataLIF": "172.16.138.126",
+    "managementLIF": "Get this from AWS console",
+    "dataLIF": "Get this from AWS console",
     "svm": "eks-canada",
     "username": "fsxadmin",
-    "password": "yourpasword",
+    "password": "yourpassword",
 
     "defaults": {
           "spaceAllocation": "false",

@@ -1,0 +1,29 @@
+{
+    "version": 1,
+    "backendname": "sweden-backend",
+    "storageDriverName": "ontap-nas",
+    "managementLIF": "10.0.134.30",
+    "dataLIF": "10.0.140.98",
+    "svm": "eks-sweden",
+    "username": "fsxadmin",
+    "password": "netapp00",
+
+    "defaults": {
+          "spaceAllocation": "false",
+          "encryption": "false"
+    },
+    "storage": [
+        {
+            "labels":{"performance":"extreme"},
+            "defaults": {
+                "qosPolicy": "extreme-fixed"
+            }
+        },
+        {
+            "labels":{"performance":"low"},
+            "defaults": {
+                "qosPolicy": "value-fixed"
+            }
+	}
+    ]
+}

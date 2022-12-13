@@ -59,23 +59,17 @@ Let's go ahead and download and install NetApp Astra Trident in AWS EKS clusters
 
 
 ````
-[ec2-user@ip-10-0-1-145 ~]$ wget wget https://github.com/NetApp/trident/releases/download/v22.07.0/trident-installer-22.07.0.tar.gz
+wget wget https://github.com/NetApp/trident/releases/download/v22.07.0/trident-installer-22.07.0.tar.gz
 
-[ec2-user@ip-10-0-1-145 ~]$ tar xvf trident-installer-22.07.0.tar.gz
+tar xvf trident-installer-22.07.0.tar.gz
 
-[ec2-user@ip-10-0-1-145 trident-installer]$ ./tridentctl install -n trident
-
-INFO Starting Trident installation.                namespace=trident
-...
-...
-INFO Trident REST interface is up.                 version=21.07.2
-INFO Trident installation succeeded.  
+./tridentctl install -n trident 
 `````
 
 Congrats! Astra Trident was deployed succesfully in AWS EKS clusters. See the next steps to configure AWS FSx for ONTAP as persistent storage backend:
 
 ````
-[ec2-user@ip-10-0-1-145 trident-installer]$ ./tridentctl create backend --filename nas-backend-sweden.yaml -n trident
+./tridentctl create backend --filename nas-backend-sweden.yaml -n trident
 +---------------+----------------+--------------------------------------+--------+---------+
 |     NAME      | STORAGE DRIVER |                 UUID                 | STATE  | VOLUMES |
 +---------------+----------------+--------------------------------------+--------+---------+

@@ -6,7 +6,7 @@
     "dataLIF": "10.0.140.98",
     "svm": "eks-sweden",
     "username": "fsxadmin",
-    "password": "netapp00",
+    "password": "yourpassword",
 
     "defaults": {
           "spaceAllocation": "false",

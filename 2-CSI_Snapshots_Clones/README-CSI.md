@@ -31,4 +31,4 @@ mysql> select * from swedenmysqlregs;
 
 So whith this process is easy and fast in order to clone PVs for DevOps/testing flows using AWS FSx for ONTAP features.
 
-Now let's finish this guide showing how you could create a NetApp Snapmirror replica between Sweden (eu-central-1) and Canada (ca-central-1) and import your own volumes in the destination AWS EKS cluster for DR purposes [here.](/3-Trident_Import_CrossRegion/README-import.md)
+Now let's finish this guide showing how you could create a NetApp Snapmirror replica between Sweden (eu-north-1) and Canada (ca-central-1) and import your own volumes in the destination AWS EKS cluster for DR purposes [here.](/3-Trident_Import_CrossRegion/README-import.md)

@@ -10,8 +10,6 @@ Initial steps will be looking as follow:
 - Deploy AWS FSx for ONTAP file system as persistent storage service for k8s (MySQL in this case) workloads in Sweden (eu-central-1) and Canada (ca-central-1).
 - Deploy AWS EKS in Sweden (eu-central-1) and Canada (ca-central-1) to provide k8s (MySQL) workloads.
 - Setting up NetApp Trident as CSI driver and configure storage backends in both regions.
-- Deploy a MySQL deployment inside AWS EKS cluster in Sweden (eu-central-1).
-- Stablish an AWS FSx for ONTAP replica between AWS FSx for ONTAP system in Sweden (eu-central-1) and Canada (ca-central-1) regions.
 
 
 ## Deploying AWS FSx for ONTAP

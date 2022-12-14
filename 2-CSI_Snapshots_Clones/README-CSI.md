@@ -1,4 +1,4 @@
-## Create AWS FSx for ONTAP Snapshots and FlexClones
+## Create AWS FSx for ONTAP Snapshots and FlexClones of MySQL deployment
 
 NetApp ONTAP Snapshots are well know for their efficient instantaneous and efficient capability.
 

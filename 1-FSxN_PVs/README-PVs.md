@@ -33,6 +33,4 @@ mysql> insert into swedenmysqlregs (`event`, `session`, `location`) values ('Dev
 'Provisioning k8s', 'Paris'),('Openshift', 'orchestration', 'Madrid'); 
 `````
 
-This is something can be done by ROSA GUI indeed:
-
 To play around with AWS FSx for ONTAP efficient Snapshots and FlexClones let's go to the next section [here.](/2-CSI_Snapshots/README-CSI.md)

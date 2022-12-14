@@ -79,4 +79,4 @@ Congrats! Astra Trident was deployed succesfully in AWS EKS clusters. See the ne
 
 Ready! 
 
-Now AWS FSx for ONTAP service is available as persistent stogare so the next step will be create StorageClasses and the first MySQL deployment using different QoS [here.](/1-FSx_ONTAP_PVs/README-PVs.md)
+Now AWS FSx for ONTAP service is available as persistent stogare so the next step will be create StorageClasses and the first MySQL deployment using different QoS [here.](/1-FSxN_PVs/README-PVs.md)

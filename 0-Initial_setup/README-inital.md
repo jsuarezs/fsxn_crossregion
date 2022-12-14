@@ -11,6 +11,7 @@ Initial steps will be looking as follow:
 - Deploy AWS EKS in Sweden (eu-north-1) and Canada (ca-central-1) to provide k8s (MySQL) workloads.
 - Setting up NetApp Trident as CSI driver and configure storage backends in both regions.
 
+NOTE: Have in mind that AWS VPC Peering or AWS TGW needs to be configured between Sweden (eu-north-1) and Canada (ca-central-1) regions: https://docs.aws.amazon.com/devicefarm/latest/developerguide/amazon-vpc-cross-region.html
 
 ## Deploying AWS FSx for ONTAP
 
@@ -24,8 +25,6 @@ AWS FSx for ONTAP is a native AWS service so in order to deploy the service is a
 AWS EKS  is a managed service that makes it easy ti use k8s on AWS without needing to install and operate your own k8s control plane. You should follow the AWS EKS getting started guide to proceed: https://docs.aws.amazon.com/eks/latest/userguide/getting-started.html
 
 Have in mind that AWS EKS worker nodes need to communicate properly with AWS FSx for ONTAP file systems in order to success providing persistent storage for AWS EKS workloads.
-
-Have in mind that AWS VPC Peering or AWS TGW needs to be configured between Sweden (eu-north-1) and Canada (ca-central-1) regions: https://docs.aws.amazon.com/devicefarm/latest/developerguide/amazon-vpc-cross-region.html
 
 <img width="1018" alt="Screenshot 2022-12-13 at 12 08 58" src="https://user-images.githubusercontent.com/59535705/207302376-f6aaf572-042f-4ab8-8825-91656a4c52b0.png">
 

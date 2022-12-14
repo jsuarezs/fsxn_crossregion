@@ -1,0 +1,8 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: performance-extreme
+provisioner: netapp.io/trident
+parameters:
+  selector: "performance=extreme"
+allowVolumeExpansion: true

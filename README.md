@@ -10,10 +10,10 @@ NetApp is a CNCF co-funder member and this implies the maturity of NetApp soluti
 ## Architecture
 
 - In this scenario I'm deploying the following services and components for the complete solution:
-    - AWS FSx for ONTAP deployed in Sweden region (eu-central-1).
+    - AWS FSx for ONTAP deployed in Sweden region (eu-north-1).
     - AWS FSx for ONTAP deployed in Canada region (ca-central-1).
     - There is a NetApp ONTAP SnapMirror replica between both FSx for ONTAP systems.
-    - AWS EKS cluster in Sweden region (eu-central-1) using MySQL database for retaining data.
+    - AWS EKS cluster in Sweden region (eu-north-1) using MySQL database for retaining data.
     - AWS EKS cluster in Canada region (ca-central-1) as a MySQL cross-region DR solution.
     - NetApp Astra Trident as persistent storage provisioner deployed inside AWS EKS clusters.
 

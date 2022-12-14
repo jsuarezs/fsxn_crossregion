@@ -7,8 +7,8 @@ At the time of this repository creation the following versions were used:
 - NetApp Astra Trident v22.07.0.
 
 Initial steps will be looking as follow:
-- Deploy AWS FSx for ONTAP file system as persistent storage service for k8s (MySQL in this case) workloads in Sweden (eu-central-1) and Canada (ca-central-1).
-- Deploy AWS EKS in Sweden (eu-central-1) and Canada (ca-central-1) to provide k8s (MySQL) workloads.
+- Deploy AWS FSx for ONTAP file system as persistent storage service for k8s (MySQL in this case) workloads in Sweden (eu-north-1) and Canada (ca-central-1).
+- Deploy AWS EKS in Sweden (eu-north-1) and Canada (ca-central-1) to provide k8s (MySQL) workloads.
 - Setting up NetApp Trident as CSI driver and configure storage backends in both regions.
 
 
@@ -29,7 +29,7 @@ Have in mind that AWS EKS worker nodes need to communicate properly with AWS FSx
 
 ## Setting up NetApp Trident as CSI driver and configure storage backends in both regions
 
-IMPORTANT NOTE: Take into consideration that you need to do these steps in both AWS EKS clusters in Sweden (eu-central-1) and Canada (ca-central-1) region in order to provide AWS FSx for ONTAP storage persistency to AWS EKS workloads.
+IMPORTANT NOTE: Take into consideration that you need to do these steps in both AWS EKS clusters in Sweden (eu-north-1) and Canada (ca-central-1) region in order to provide AWS FSx for ONTAP storage persistency to AWS EKS workloads.
 
 Once AWS EKS clusters are deployed remmember to create or update your ````kubeconfig```` file to allow the communication with the AWS EKS clusters.
 

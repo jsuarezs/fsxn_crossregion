@@ -14,13 +14,48 @@ In this scenario you will create a NetApp SnapMirror replica between both region
 
 ![short multi region diagram](https://user-images.githubusercontent.com/59535705/207064981-1c3121f6-5085-4ee5-a89a-100aeff46c7c.jpg)
 
+We need to create an AWS FSx for ONTAP Data Protection (DP) volume in Canada (ca-central-1) specifying the same capacity as the origin AWS FSx for ONTAP volume in the source in Sweden (eu-north-1). The capacity pool Tiering Policy could be set to All or Auto depends on our RTO SLAs.
 
+![Screenshot 2022-12-14 at 10 46 49](https://user-images.githubusercontent.com/59535705/207562286-2b1d2f53-e02d-45ba-b264-1b2511f7aed0.png)
 
+Now you need to create a cluster relationship using the following documentation: 
+- https://docs.netapp.com/us-en/ontap/peering/create-cluster-relationship-93-later-task.html - 
+- https://docs.netapp.com/us-en/ontap/peering/create-intercluster-svm-peer-relationship-93-later-task.html
 
-Once the volume is in AWS FSx for ONTAP is possible to import it to ROSA cluster using Astra Trident Import feature.
+These operations are done using AWS FSx for ONTAP CLI accesing by SSH to the Management Endpoint you may find in Administration FSX for ONTAP tab.
+
+In order to do this it's necessary to have in mind the Intercluster IP addresses which you may find in Administration AWS FSx for ONTAP tab. In this case is called ````mysql_dr````.
+
+![Screenshot 2022-12-14 at 10 55 54](https://user-images.githubusercontent.com/59535705/207564284-86c5f83e-8d74-4d94-8b9f-cb54c8ba501d.png)
+ 
+Once the AWS FSx for ONTAP relationship is already stablished you should initialize it to transfer the data from one region to the source one, break it and you will be ready to import the new PV volume to AWS EKS cluster in Sweden region (eu-north-1).
 
 ````
-./tridentctl import volume BackendForNAS trident_pvc_34a9dcc0_e4cd_4d81_9248_8ad5f5bfd19e -f vol-nas-cloud.yaml -n trident
-````
+snapmirror initialize -destination-path eks-canada:mysql_dr
 
-Getting started with NetApp Astra Trident Import feature [Getting started.](https://netapp-trident.readthedocs.io/en/stable-v20.07/kubernetes/operations/tasks/volumes/import.html)
+snapmirror show (idle)
+
+snapmirror quiesce -destination-path eks-canada:mysql_dr
+
+snapmirror break -destination-path eks-canada:mysql_dr
+
+````
+To complete the DR process once the AWS FSx for ONTAP SnapMirror replica was broken you will import the PV in the destination in Sweden (eu-north-1) AWS EKS cluster.
+
+`````
+./tridentctl import volume canada-backend mysql_dr -f ../pvc-dr.yaml -n trident
+``````
+
+And then create the MySQL DR deployment using the previous PV volume coming from Sweden region (eu-north-1) and check that the same peristent data is already in the destination AWS EKS cluster.
+`````
+kubectl create -f ../mysqldr.yaml
+
+kubectl exec -it pod -- mysql -u root -p (Netapp1!)
+
+mysql> use swedenmysql;
+
+mysql> select * from swedenmysqlregs;
+`````
+
+## CONCLUSIONS
+

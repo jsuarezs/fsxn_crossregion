@@ -59,3 +59,16 @@ mysql> select * from swedenmysqlregs;
 
 ## CONCLUSIONS
 
+Using AWS FSx for NetApp ONTAP in cobination with NetApp Astra Trident you will get these benefits:
+
+- Reduce complexity
+Provision stateful containerized applications taking advantages of ONTAP Enterprise-grade features and simplify DevOps workflows using NetApp Astra Trident.
+
+- Move persistent data to everywhere
+Multi-Cloud and on-premises data portability thanks to ONTAP technology.
+
+- Save time…
+AWS FSx for NetApp ONTAP deployment and configuration can be automated using Terraform, Ansible, AWS CloudFormation and ONTAP REST API.
+
+- …And money!
+Profit from AWS FSx for NetApp ONTAP savings with built-in storage efficiency and tiering technologies.

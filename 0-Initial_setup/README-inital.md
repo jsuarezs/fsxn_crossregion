@@ -25,6 +25,8 @@ AWS EKS  is a managed service that makes it easy ti use k8s on AWS without needi
 
 Have in mind that AWS EKS worker nodes need to communicate properly with AWS FSx for ONTAP file systems in order to success providing persistent storage for AWS EKS workloads.
 
+Have in mind that AWS VPC Peering or AWS TGW needs to be configured between Sweden (eu-north-1) and Canada (ca-central-1) regions: https://docs.aws.amazon.com/devicefarm/latest/developerguide/amazon-vpc-cross-region.html
+
 <img width="1018" alt="Screenshot 2022-12-13 at 12 08 58" src="https://user-images.githubusercontent.com/59535705/207302376-f6aaf572-042f-4ab8-8825-91656a4c52b0.png">
 
 ## Setting up NetApp Trident as CSI driver and configure storage backends in both regions
